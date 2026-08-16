@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="haui_blue">#0D4178</color>
+    <color name="haui_blue_dark">#082F5A</color>
+    <color name="haui_yellow">#FFCC50</color>
+    <color name="haui_red">#ED1B2F</color>
+    <color name="haui_surface">#F5F8FC</color>
+    <color name="haui_card">#FFFFFFFF</color>
+    <color name="haui_text">#172033</color>
+    <color name="haui_text_muted">#667085</color>
+    <color name="haui_outline">#D5DCE7</color>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="report_description">Tổng quan dữ liệu phòng học, tài khoản và yêu cầu đặt phòng trong hệ thống.</string>
+    <string name="report_generated_at">Cập nhật: %1$s • Múi giờ %2$s</string>
+    <string name="report_load_error_http">Không thể tải báo cáo thống kê. HTTP: %1$d</string>
+    <string name="report_kpi_title">Chỉ số tổng quan</string>
+    <string name="report_campuses">Cơ sở</string>
+    <string name="report_buildings">Tòa nhà</string>
+    <string name="report_classrooms">Phòng học</string>
+    <string name="report_users">Tài khoản</string>
+    <string name="report_bookings">Yêu cầu đặt phòng</string>
+    <string name="report_pending">Đang chờ duyệt</string>
+    <string name="report_users_detail">%1$d sinh viên • %2$d admin • %3$d đã khóa</string>
+    <string name="report_bookings_detail">7 ngày: %1$d • 30 ngày: %2$d</string>
+    <string name="report_room_status_title">Trạng thái phòng học</string>
+    <string name="report_room_status_subtitle">Đơn vị: số phòng và tỷ lệ phần trăm</string>
+    <string name="report_booking_status_title">Trạng thái yêu cầu đặt phòng</string>
+    <string name="report_booking_status_subtitle">Đơn vị trục tung: số yêu cầu</string>
+    <string name="report_trend_title">Xu hướng yêu cầu đặt phòng</string>
+    <string name="report_trend_subtitle">Số yêu cầu được tạo theo ngày</string>
+    <string name="report_7_days">7 ngày</string>
+    <string name="report_30_days">30 ngày</string>
+    <string name="report_trend_total">Tổng trong %1$d ngày: %2$d yêu cầu</string>
+    <string name="report_status_active">Hoạt động</string>
+    <string name="report_status_maintenance">Bảo trì</string>
+    <string name="report_status_inactive">Ngừng hoạt động</string>
+    <string name="report_legend_format">%1$s: %2$d (%3$.1f%%)</string>
+    <string name="report_pending_short">Chờ</string>
+    <string name="report_approved_short">Duyệt</string>
+    <string name="report_rejected_short">Từ chối</string>
+    <string name="report_cancelled_short">Đã hủy</string>
+    <string name="report_rooms_unit">phòng học</string>
+    <string name="report_no_chart_data">Chưa có dữ liệu biểu đồ.</string>
+</resources>

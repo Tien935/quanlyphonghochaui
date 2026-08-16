@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/haui_card"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="1dp"
+    app:strokeColor="@color/haui_outline"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvItemBookingCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/haui_text_muted"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Yêu cầu #15" />
+
+            <TextView
+                android:id="@+id/tvItemBookingStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="Chờ duyệt" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvItemBookingRoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:textColor="@color/haui_blue"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            tools:text="A1-301" />
+
+        <TextView
+            android:id="@+id/tvItemBookingDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/haui_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="30/08/2026 • 18:00 - 19:00" />
+
+        <TextView
+            android:id="@+id/tvItemBookingLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/haui_text_muted"
+            android:textSize="14sp"
+            tools:text="A1 - Nhà A1 • Cơ sở 1" />
+
+        <TextView
+            android:id="@+id/tvItemBookingHeadcount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/haui_text_muted"
+            android:textSize="14sp"
+            tools:text="Số người: 10" />
+
+        <TextView
+            android:id="@+id/tvItemBookingPurpose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/haui_text"
+            android:textSize="14sp"
+            tools:text="Mục đích: Học nhóm và thảo luận bài tập" />
+
+        <TextView
+            android:id="@+id/tvItemBookingAdminNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:textColor="@color/haui_red"
+            android:textSize="13sp"
+            android:visibility="gone"
+            tools:text="Ghi chú quản trị: Vui lòng chọn phòng khác."
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

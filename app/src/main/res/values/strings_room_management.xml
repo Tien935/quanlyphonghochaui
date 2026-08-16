@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="admin_room_description">Tìm kiếm, thêm mới và cập nhật thông tin hoặc trạng thái phòng học.</string>
+    <string name="admin_room_search_hint">Tìm theo mã phòng, tòa nhà hoặc mô tả</string>
+    <string name="admin_room_loading">Đang tải danh sách phòng học…</string>
+    <string name="admin_room_count">Có %1$d phòng học</string>
+    <string name="admin_room_empty">Không có phòng học phù hợp.</string>
+    <string name="admin_room_load_error">Không thể tải danh sách phòng. HTTP: %1$d</string>
+
+    <string name="add_room">+ Thêm phòng học</string>
+    <string name="add_room_title">Thêm phòng học</string>
+    <string name="edit_room_title">Sửa phòng học</string>
+
+    <string name="room_form_description">Nhập thông tin phòng. Mã phòng phải duy nhất trong hệ thống.</string>
+    <string name="room_form_building_label">Tòa nhà</string>
+    <string name="room_form_code_label">Mã phòng</string>
+    <string name="room_form_floor_label">Tầng</string>
+    <string name="room_form_capacity_label">Sức chứa</string>
+    <string name="room_form_status_label">Trạng thái hoạt động</string>
+    <string name="room_form_description_label">Mô tả (không bắt buộc)</string>
+
+    <string name="create_room">Thêm phòng</string>
+    <string name="update_room">Lưu thay đổi</string>
+    <string name="room_form_loading_buildings">Đang tải tòa nhà…</string>
+    <string name="room_form_saving">Đang lưu…</string>
+
+    <string name="room_form_building_required">Vui lòng chọn tòa nhà.</string>
+    <string name="room_form_code_required">Vui lòng nhập mã phòng.</string>
+    <string name="room_form_floor_invalid">Vui lòng nhập tầng hợp lệ.</string>
+    <string name="room_form_floor_negative">Tầng không được nhỏ hơn 0.</string>
+    <string name="room_form_floor_too_large">Tầng không được vượt quá %1$d.</string>
+    <string name="room_form_capacity_invalid">Sức chứa phải là số lớn hơn 0.</string>
+    <string name="room_form_status_required">Vui lòng chọn trạng thái.</string>
+    <string name="room_form_floor_helper">Tòa nhà này có tối đa %1$d tầng.</string>
+
+    <string name="room_form_building_load_error">Không thể tải danh sách tòa nhà. HTTP: %1$d</string>
+    <string name="room_form_no_buildings">Chưa có tòa nhà để tạo phòng học.</string>
+    <string name="room_form_building_not_found">Không còn tìm thấy tòa nhà hiện tại của phòng.</string>
+
+    <string name="room_form_save_failed">Không thể lưu thông tin phòng học.</string>
+    <string name="room_form_create_success">Đã thêm phòng học thành công.</string>
+    <string name="room_form_update_success">Đã cập nhật phòng học thành công.</string>
+
+    <string name="delete_room">Xóa phòng</string>
+    <string name="delete_room_title">Xác nhận xóa phòng</string>
+    <string name="delete_room_message">Bạn có chắc chắn muốn xóa phòng %1$s không? Thao tác này không thể hoàn tác.</string>
+    <string name="room_form_deleting">Đang xóa…</string>
+    <string name="delete_room_success">Đã xóa phòng học thành công.</string>
+    <string name="delete_room_failed">Không thể xóa phòng học.</string>
+
+</resources>

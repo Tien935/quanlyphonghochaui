@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/haui_card"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="1dp"
+    app:strokeColor="@color/haui_outline"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvItemRoomCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/haui_blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="A1-301" />
+
+            <TextView
+                android:id="@+id/tvItemStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="Đang hoạt động" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvItemRoomInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:textColor="@color/haui_text"
+            android:textSize="14sp"
+            tools:text="Tầng 3 • Sức chứa 60 người" />
+
+        <TextView
+            android:id="@+id/tvItemBuilding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/haui_text_muted"
+            android:textSize="14sp"
+            tools:text="Tòa nhà: A1 - Nhà A1" />
+
+        <TextView
+            android:id="@+id/tvItemCampus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/haui_text_muted"
+            android:textSize="14sp"
+            tools:text="Cơ sở: CS1 - Cơ sở 1" />
+
+        <TextView
+            android:id="@+id/tvItemDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/haui_text_muted"
+            android:textSize="13sp"
+            tools:text="Phòng học lý thuyết có máy chiếu." />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/studentHomeRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/haui_surface"
+    android:fillViewport="true"
+    tools:context=".StudentHomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="28dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/haui_blue"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingTop="28dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="48dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_brand"
+                android:textColor="@color/haui_yellow"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/student_home_title"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/student_home_description"
+                android:textColor="#DCE9F7"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-24dp"
+            android:layout_marginEnd="20dp"
+            app:cardBackgroundColor="@color/haui_card"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp"
+            app:strokeColor="@color/haui_outline"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/haui_yellow"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="14dp"
+                        android:paddingTop="7dp"
+                        android:paddingEnd="14dp"
+                        android:paddingBottom="7dp"
+                        android:text="@string/student_role_label"
+                        android:textColor="@color/haui_blue_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/signed_in_as"
+                    android:textColor="@color/haui_text_muted"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvStudentEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/haui_text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="student@haui.edu.vn" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/home_functions"
+            android:textColor="@color/haui_text"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStudentFindRoom"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/student_find_room"
+            android:textAllCaps="false"
+            android:textColor="@color/haui_blue"
+            android:textSize="15sp"
+            app:cornerRadius="14dp"
+            app:strokeColor="@color/haui_outline" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStudentCreateBooking"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/student_create_booking"
+            android:textAllCaps="false"
+            android:textColor="@color/haui_blue"
+            android:textSize="15sp"
+            app:cornerRadius="14dp"
+            app:strokeColor="@color/haui_outline" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStudentBookings"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/student_my_bookings"
+            android:textAllCaps="false"
+            android:textColor="@color/haui_blue"
+            android:textSize="15sp"
+            app:cornerRadius="14dp"
+            app:strokeColor="@color/haui_outline" />
+
+        <!-- Button thông báo và badge được đặt chồng lên nhau. -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStudentNotifications"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center_vertical"
+                android:paddingEnd="58dp"
+                android:text="@string/student_notifications"
+                android:textAllCaps="false"
+                android:textColor="@color/haui_blue"
+                android:textSize="15sp"
+                app:cornerRadius="14dp"
+                app:strokeColor="@color/haui_outline" />
+
+            <TextView
+                android:id="@+id/tvStudentNotificationBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="18dp"
+                android:background="@drawable/bg_count_badge"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="center"
+                android:minWidth="24dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="3"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStudentLogout"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            android:textColor="@color/haui_red"
+            app:cornerRadius="14dp"
+            app:strokeColor="@color/haui_red" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HaUI Classroom</string>
+
+    <string name="connection_title">Kết nối Supabase</string>
+    <string name="connection_description">Kiểm tra kết nối REST API tới bảng campuses trước khi xây dựng các màn hình nghiệp vụ.</string>
+    <string name="configuration_label">Trạng thái cấu hình</string>
+    <string name="configuration_ready">Đã tìm thấy Project URL và Publishable/anon key.</string>
+    <string name="configuration_missing">Chưa cấu hình Supabase. Hãy thêm SUPABASE_URL và SUPABASE_PUBLISHABLE_KEY vào local.properties.</string>
+    <string name="test_connection">Kiểm tra kết nối</string>
+    <string name="testing_connection">Đang kết nối…</string>
+    <string name="result_label">Kết quả</string>
+    <string name="result_waiting">Chưa thực hiện kiểm tra.</string>
+
+    <string name="haui_logo_description">Logo Trường Đại học Công nghiệp Hà Nội</string>
+    <string name="login_welcome">Chào mừng trở lại</string>
+    <string name="login_subtitle">Đăng nhập để sử dụng hệ thống quản lý phòng học HaUI</string>
+    <string name="email_label">Email</string>
+    <string name="email_hint">example@haui.edu.vn</string>
+    <string name="password_label">Mật khẩu</string>
+    <string name="password_hint">Nhập mật khẩu</string>
+    <string name="login_button">Đăng nhập</string>
+    <string name="login_loading">Đang đăng nhập…</string>
+    <string name="login_support">Nếu quên mật khẩu, vui lòng liên hệ quản trị viên.</string>
+    <string name="login_footer">HANOI UNIVERSITY OF INDUSTRY</string>
+
+    <string name="error_email_required">Vui lòng nhập email.</string>
+    <string name="error_email_invalid">Email không đúng định dạng.</string>
+    <string name="error_password_required">Vui lòng nhập mật khẩu.</string>
+    <string name="error_password_short">Mật khẩu phải có ít nhất 6 ký tự.</string>
+    <string name="error_configuration_missing">Ứng dụng chưa được cấu hình Supabase.</string>
+    <string name="error_login_failed">Đăng nhập không thành công. Vui lòng kiểm tra email và mật khẩu.</string>
+    <string name="error_profile_missing">Đăng nhập thành công nhưng không tìm thấy hồ sơ người dùng.</string>
+    <string name="error_role_invalid">Tài khoản chưa được cấp vai trò hợp lệ.</string>
+    <string name="error_network">Không thể kết nối: %1$s</string>
+    <string name="login_success_with_role">Đăng nhập thành công với vai trò: %1$s</string>
+
+    <string name="home_brand">HaUI Classroom</string>
+    <string name="admin_home_title">Trang quản trị</string>
+    <string name="student_home_title">Trang sinh viên</string>
+    <string name="signed_in_as">Đang đăng nhập với</string>
+    <string name="admin_role_label">QUẢN TRỊ VIÊN</string>
+    <string name="student_role_label">SINH VIÊN</string>
+    <string name="admin_home_description">Quản lý phòng học và các yêu cầu sử dụng phòng.</string>
+    <string name="student_home_description">Tìm kiếm, đăng ký và theo dõi lịch sử dụng phòng.</string>
+    <string name="home_functions">Chức năng</string>
+
+    <string name="admin_manage_rooms">Quản lý phòng học</string>
+    <string name="admin_approve_requests">Duyệt yêu cầu đặt phòng</string>
+    <string name="admin_manage_users">Quản lý tài khoản</string>
+    <string name="admin_reports">Báo cáo thống kê</string>
+
+    <string name="student_find_room">Tìm phòng học</string>
+    <string name="student_create_booking">Đăng ký sử dụng phòng</string>
+    <string name="student_my_bookings">Lịch đăng ký của tôi</string>
+    <string name="student_notifications">Thông báo</string>
+
+    <string name="logout">Đăng xuất</string>
+    <string name="logout_title">Xác nhận đăng xuất</string>
+    <string name="logout_message">Bạn có chắc chắn muốn đăng xuất khỏi tài khoản này không?</string>
+    <string name="cancel">Hủy</string>
+    <string name="feature_coming_soon">Chức năng “%1$s” sẽ được xây dựng ở bước tiếp theo.</string>
+    <string name="back">Quay lại</string>
+
+    <string name="find_room_title">Tìm phòng học</string>
+    <string name="search_room_hint">Nhập mã phòng, tên tòa nhà hoặc cơ sở</string>
+    <string name="campus_filter">Cơ sở</string>
+    <string name="building_filter">Tòa nhà</string>
+    <string name="status_filter">Trạng thái</string>
+    <string name="filter_all">Tất cả</string>
+    <string name="room_loading">Đang tải danh sách phòng…</string>
+    <string name="room_result_count">Tìm thấy %1$d phòng học</string>
+    <string name="room_no_results">Không tìm thấy phòng học phù hợp.</string>
+    <string name="room_load_error_http">Không thể tải phòng học. HTTP: %1$d</string>
+    <string name="room_load_error_network">Lỗi kết nối: %1$s</string>
+    <string name="unknown_error">Không xác định</string>
+    <string name="information_not_available">Chưa có thông tin</string>
+    <string name="room_floor_capacity">Tầng %1$d • Sức chứa %2$d người</string>
+    <string name="room_building">Tòa nhà: %1$s</string>
+    <string name="room_campus">Cơ sở: %1$s</string>
+    <string name="room_status_active">Đang hoạt động</string>
+    <string name="room_status_maintenance">Đang bảo trì</string>
+    <string name="room_status_inactive">Ngừng hoạt động</string>
+
+    <string name="create_booking_title">Đăng ký sử dụng phòng</string>
+    <string name="create_booking_description">Chọn phòng và thời gian cần sử dụng. Hệ thống sẽ tự động kiểm tra lịch học và các yêu cầu đặt phòng khác.</string>
+    <string name="booking_room_label">Phòng học</string>
+    <string name="booking_select_room_hint">Chỉ hiển thị các phòng đang hoạt động.</string>
+    <string name="booking_room_capacity_hint">Phòng %1$s có sức chứa tối đa %2$d người.</string>
+    <string name="booking_date_label">Ngày sử dụng</string>
+    <string name="booking_start_label">Giờ bắt đầu</string>
+    <string name="booking_end_label">Giờ kết thúc</string>
+    <string name="booking_headcount_label">Số người sử dụng</string>
+    <string name="booking_purpose_label">Mục đích sử dụng</string>
+    <string name="submit_booking">Gửi yêu cầu</string>
+    <string name="booking_loading_rooms">Đang tải phòng…</string>
+    <string name="booking_submitting">Đang gửi yêu cầu…</string>
+    <string name="booking_room_dropdown_item">%1$s • Tòa %2$s • %3$s • %4$d chỗ</string>
+    <string name="booking_room_required">Vui lòng chọn phòng học.</string>
+    <string name="booking_date_required">Vui lòng chọn ngày sử dụng.</string>
+    <string name="booking_start_required">Vui lòng chọn giờ bắt đầu.</string>
+    <string name="booking_end_required">Vui lòng chọn giờ kết thúc.</string>
+    <string name="booking_time_invalid">Giờ kết thúc phải sau giờ bắt đầu.</string>
+    <string name="booking_headcount_required">Vui lòng nhập số người sử dụng.</string>
+    <string name="booking_headcount_positive">Số người phải lớn hơn 0.</string>
+    <string name="booking_headcount_invalid">Số người không hợp lệ.</string>
+    <string name="booking_headcount_capacity">Số người không được vượt quá sức chứa %1$d.</string>
+    <string name="booking_purpose_required">Vui lòng nhập mục đích sử dụng.</string>
+    <string name="booking_purpose_short">Mục đích phải có ít nhất 5 ký tự.</string>
+    <string name="booking_room_load_error">Không thể tải danh sách phòng. HTTP: %1$d</string>
+    <string name="booking_no_active_rooms">Hiện không có phòng đang hoạt động.</string>
+    <string name="booking_submit_failed">Không thể gửi yêu cầu đặt phòng.</string>
+    <string name="booking_success_title">Gửi yêu cầu thành công</string>
+    <string name="booking_success_message">Mã yêu cầu: #%1$d\nTrạng thái: Chờ duyệt.</string>
+    <string name="booking_success_message_without_id">Yêu cầu đã được gửi và đang chờ quản trị viên duyệt.</string>
+    <string name="back_to_home">Về trang chủ</string>
+
+    <string name="my_bookings_title">Lịch đăng ký của tôi</string>
+    <string name="refresh">Làm mới</string>
+    <string name="my_bookings_loading">Đang tải lịch đăng ký…</string>
+    <string name="my_bookings_count">Có %1$d yêu cầu</string>
+    <string name="my_bookings_empty">Bạn chưa có yêu cầu đặt phòng phù hợp.</string>
+    <string name="my_bookings_load_error">Không thể tải lịch đăng ký. HTTP: %1$d</string>
+    <string name="session_expired_message">Phiên đăng nhập đã hết hạn. Vui lòng đăng xuất và đăng nhập lại.</string>
+
+    <string name="booking_status_pending">Chờ duyệt</string>
+    <string name="booking_status_approved">Đã duyệt</string>
+    <string name="booking_status_rejected">Từ chối</string>
+    <string name="booking_status_cancelled">Đã hủy</string>
+
+    <string name="my_booking_code">Yêu cầu #%1$d</string>
+    <string name="my_booking_date_time">%1$s • %2$s - %3$s</string>
+    <string name="my_booking_headcount">Số người: %1$d</string>
+    <string name="my_booking_purpose">Mục đích: %1$s</string>
+    <string name="my_booking_admin_note">Ghi chú quản trị: %1$s</string>
+
+</resources>

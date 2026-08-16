@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="admin_booking_description">Xem và xử lý các yêu cầu sử dụng phòng. Nhấn vào yêu cầu đang chờ để duyệt hoặc từ chối.</string>
+
+    <string name="admin_booking_loading">Đang tải yêu cầu đặt phòng…</string>
+
+    <string name="admin_booking_count">Có %1$d yêu cầu</string>
+
+    <string name="admin_booking_empty">Không có yêu cầu đặt phòng phù hợp.</string>
+
+    <string name="admin_booking_load_error">Không thể tải yêu cầu. HTTP: %1$d</string>
+
+    <string name="admin_booking_student">Sinh viên: %1$s • %2$s</string>
+
+    <string name="admin_booking_room">Phòng %1$s • Tầng %2$d • %3$d chỗ</string>
+
+    <string name="admin_booking_tap_to_review">Nhấn để duyệt hoặc từ chối</string>
+
+    <string name="admin_booking_already_reviewed">Yêu cầu này đã được xử lý.</string>
+
+    <string name="admin_review_booking_title">Xử lý yêu cầu #%1$d</string>
+
+    <string name="admin_review_summary">Sinh viên: %1$s\nMã HaUI: %2$s\nPhòng: %3$s\nNgày: %4$s\nThời gian: %5$s - %6$s\nSố người: %7$d\nMục đích: %8$s</string>
+
+    <string name="admin_note_label">Ghi chú quản trị</string>
+
+    <string name="admin_reject_note_required">Vui lòng nhập lý do từ chối.</string>
+
+    <string name="approve">Duyệt</string>
+
+    <string name="reject">Từ chối</string>
+
+    <string name="close">Đóng</string>
+
+    <string name="admin_review_failed">Không thể xử lý yêu cầu.</string>
+
+    <string name="admin_approve_success">Đã duyệt yêu cầu đặt phòng.</string>
+
+    <string name="admin_reject_success">Đã từ chối yêu cầu đặt phòng.</string>
+
+</resources>

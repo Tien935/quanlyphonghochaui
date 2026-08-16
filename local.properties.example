@@ -1,0 +1,5 @@
+# Copy these two values into your local.properties file.
+# Use a publishable key (sb_publishable_...) or the legacy anon key.
+# Never use sb_secret_... or service_role in an Android application.
+SUPABASE_URL=https://your-project-ref.supabase.co/
+SUPABASE_PUBLISHABLE_KEY=sb_publishable_xxxxxxxxxxxxxxxxxxxx

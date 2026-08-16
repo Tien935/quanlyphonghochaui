@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="admin_user_description">Xem danh sách, tìm kiếm và khóa hoặc mở khóa tài khoản sử dụng hệ thống.</string>
+
+    <string name="admin_user_search_hint">Tìm theo họ tên, mã HaUI hoặc email</string>
+
+    <string name="admin_user_role_filter">Vai trò</string>
+
+    <string name="admin_user_loading">Đang tải danh sách tài khoản…</string>
+
+    <string name="admin_user_count">Có %1$d tài khoản</string>
+
+    <string name="admin_user_empty">Không có tài khoản phù hợp.</string>
+
+    <string name="admin_user_load_error">Không thể tải danh sách tài khoản. HTTP: %1$d</string>
+
+    <string name="admin_user_haui_code">Mã HaUI: %1$s</string>
+
+    <string name="admin_user_email">Email: %1$s</string>
+
+    <string name="admin_user_created_at">Ngày tạo: %1$s</string>
+
+    <string name="admin_user_last_sign_in">Đăng nhập gần nhất: %1$s</string>
+
+    <string name="admin_user_role_admin">QUẢN TRỊ VIÊN</string>
+
+    <string name="admin_user_role_student">SINH VIÊN</string>
+
+    <string name="admin_user_role_unknown">CHƯA GÁN VAI TRÒ</string>
+
+    <string name="admin_user_status_active">Đang hoạt động</string>
+
+    <string name="admin_user_status_locked">Đã khóa</string>
+
+    <string name="lock_account">Khóa tài khoản</string>
+
+    <string name="unlock_account">Mở khóa tài khoản</string>
+
+    <string name="current_account">Tài khoản hiện tại</string>
+
+    <string name="lock_account_title">Xác nhận khóa tài khoản</string>
+
+    <string name="unlock_account_title">Xác nhận mở khóa tài khoản</string>
+
+    <string name="lock_account_message">Bạn có chắc chắn muốn khóa tài khoản %1$s không?</string>
+
+    <string name="unlock_account_message">Bạn có chắc chắn muốn mở khóa tài khoản %1$s không?</string>
+
+    <string name="lock_account_success">Đã khóa tài khoản thành công.</string>
+
+    <string name="unlock_account_success">Đã mở khóa tài khoản thành công.</string>
+
+    <string name="admin_user_status_update_failed">Không thể cập nhật trạng thái tài khoản.</string>
+
+</resources>

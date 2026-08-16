@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="notification_title">Thông báo</string>
+
+    <string name="notification_description">Theo dõi kết quả duyệt các yêu cầu sử dụng phòng của bạn.</string>
+
+    <string name="notification_loading">Đang tải thông báo…</string>
+
+    <string name="notification_count">Có %1$d thông báo • %2$d chưa đọc</string>
+
+    <string name="notification_empty">Bạn chưa có thông báo.</string>
+
+    <string name="notification_load_error">Không thể tải thông báo. HTTP: %1$d</string>
+
+    <string name="notification_update_error">Không thể cập nhật trạng thái thông báo.</string>
+
+    <string name="notification_mark_all_read">Đánh dấu tất cả đã đọc</string>
+
+    <string name="notification_all_read_success">Đã đánh dấu tất cả thông báo là đã đọc.</string>
+
+    <string name="notification_new">MỚI</string>
+
+    <string name="notification_type_approved">Yêu cầu đã được duyệt</string>
+
+    <string name="notification_type_rejected">Yêu cầu bị từ chối</string>
+
+    <string name="notification_type_general">Thông báo hệ thống</string>
+
+</resources>
