@@ -14,6 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Phonghochaui">
         <activity
+            android:name=".AdminScheduleFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".AdminScheduleManagementActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminReportsActivity"
             android:exported="false" />
         <activity

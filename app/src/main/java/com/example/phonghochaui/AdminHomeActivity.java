@@ -75,6 +75,12 @@ public class AdminHomeActivity extends AppCompatActivity {
                         RoomManagementActivity.class
                 ))
         );
+        findViewById(R.id.btnAdminSchedules).setOnClickListener(
+                view -> startActivity(new Intent(
+                        this,
+                        AdminScheduleManagementActivity.class
+                ))
+        );
         findViewById(R.id.btnAdminRequests).setOnClickListener(
                 view -> startActivity(new Intent(
                         this,

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/adminHomeRoot"
@@ -141,7 +140,22 @@
             app:cornerRadius="14dp"
             app:strokeColor="@color/haui_outline" />
 
-        <!-- Button duyệt yêu cầu và badge chờ duyệt. -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdminSchedules"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/admin_manage_schedules"
+            android:textAllCaps="false"
+            android:textColor="@color/haui_blue"
+            android:textSize="15sp"
+            app:cornerRadius="14dp"
+            app:strokeColor="@color/haui_outline" />
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"

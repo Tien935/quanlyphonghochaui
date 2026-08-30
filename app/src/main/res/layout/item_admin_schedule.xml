@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvScheduleDateHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="9dp"
+        android:textColor="@color/haui_blue"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:text="Thứ Hai, 31/08/2026" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardScheduleItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/haui_card"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="1dp"
+        app:strokeColor="@color/haui_outline"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardScheduleTime"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/schedule_study_surface"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:id="@+id/tvScheduleTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:minHeight="92dp"
+                    android:padding="8dp"
+                    android:textColor="@color/schedule_study"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="07:00\n–\n09:30" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvScheduleSubject"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:textColor="@color/haui_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="Lập trình Android" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnScheduleMore"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="@string/schedule_more_actions"
+                        android:minWidth="0dp"
+                        android:padding="0dp"
+                        android:text="⋮"
+                        android:textColor="@color/haui_text_muted"
+                        android:textSize="22sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvScheduleSubjectCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/haui_text_muted"
+                    android:textSize="13sp"
+                    tools:text="INT1405" />
+
+                <TextView
+                    android:id="@+id/tvScheduleLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:textColor="@color/haui_text_muted"
+                    android:textSize="13sp"
+                    tools:text="Phòng A1-301 • Tòa A1 • CS1" />
+
+                <TextView
+                    android:id="@+id/tvScheduleLecturer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/haui_text_muted"
+                    android:textSize="13sp"
+                    tools:text="GV. Nguyễn Minh Anh • GV001" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardScheduleType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    app:cardBackgroundColor="@color/schedule_study_surface"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/tvScheduleType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/schedule_study"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        tools:text="Lịch học" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

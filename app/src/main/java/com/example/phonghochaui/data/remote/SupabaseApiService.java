@@ -12,6 +12,8 @@ import com.example.phonghochaui.data.model.LoginRequest;
 import com.example.phonghochaui.data.model.NotificationItem;
 import com.example.phonghochaui.data.model.RoomBooking;
 import com.example.phonghochaui.data.model.RoomBookingRequest;
+import com.example.phonghochaui.data.model.ScheduleItem;
+import com.example.phonghochaui.data.model.SubjectOption;
 
 import java.util.List;
 
@@ -82,6 +84,31 @@ public interface SupabaseApiService {
 
     @POST("rest/v1/rpc/admin_get_dashboard_statistics_v1")
     Call<DashboardStatistics> getAdminDashboardStatistics(
+            @Body JsonObject request
+    );
+
+    @POST("rest/v1/rpc/admin_list_schedules_v1")
+    Call<List<ScheduleItem>> listAdminSchedules(
+            @Body JsonObject request
+    );
+
+    @POST("rest/v1/rpc/admin_list_subject_options_v1")
+    Call<List<SubjectOption>> listAdminSubjectOptions(
+            @Body JsonObject request
+    );
+
+    @POST("rest/v1/rpc/admin_create_schedule_v1")
+    Call<JsonObject> createAdminSchedule(
+            @Body JsonObject request
+    );
+
+    @POST("rest/v1/rpc/admin_update_schedule_v1")
+    Call<JsonObject> updateAdminSchedule(
+            @Body JsonObject request
+    );
+
+    @POST("rest/v1/rpc/admin_delete_schedule_v1")
+    Call<JsonObject> deleteAdminSchedule(
             @Body JsonObject request
     );
 

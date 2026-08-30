@@ -11,4 +11,10 @@
     <color name="haui_text">#172033</color>
     <color name="haui_text_muted">#667085</color>
     <color name="haui_outline">#D5DCE7</color>
+    <color name="schedule_study">#0D5CC4</color>
+    <color name="schedule_study_surface">#E8F1FD</color>
+    <color name="schedule_self_study">#198754</color>
+    <color name="schedule_self_study_surface">#E7F5ED</color>
+    <color name="schedule_other">#7A3FB0</color>
+    <color name="schedule_other_surface">#F2EAF9</color>
 </resources>
