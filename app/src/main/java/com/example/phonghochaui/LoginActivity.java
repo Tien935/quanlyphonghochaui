@@ -431,6 +431,9 @@ public class LoginActivity extends AppCompatActivity {
                             value.getAsString();
 
                     if (!message.trim().isEmpty()) {
+                        if ("User is banned".equalsIgnoreCase(message.trim())) {
+                            return "Tài khoản đã bị cấm";
+                        }
                         return message;
                     }
                 }
