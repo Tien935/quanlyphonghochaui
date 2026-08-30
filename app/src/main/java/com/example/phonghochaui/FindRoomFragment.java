@@ -12,6 +12,12 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -34,7 +40,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FindRoomActivity extends AppCompatActivity {
+public class FindRoomFragment extends Fragment {
 
     private static final String CLASSROOM_SELECT =
             "id,room_code,floor,capacity,operational_status,description,"
@@ -60,11 +66,20 @@ public class FindRoomActivity extends AppCompatActivity {
     private String selectedBuilding;
     private String selectedStatus;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    private View rootView;
 
-        SessionManager sessionManager = new SessionManager(this);
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.activity_find_room, container, false);
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        SessionManager sessionManager = new SessionManager(requireContext());
 
         if (!sessionManager.hasSession()
                 || !"student".equals(sessionManager.getUserRole())) {
@@ -72,12 +87,12 @@ public class FindRoomActivity extends AppCompatActivity {
             return;
         }
 
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_find_room);
+        // EdgeToEdge.enable(requireActivity());
+        
 
         ViewCompat.setOnApplyWindowInsetsListener(
-                findViewById(R.id.findRoomRoot),
-                (view, insets) -> {
+                rootView.findViewById(R.id.findRoomRoot),
+                (v, insets) -> {
                     Insets systemBars = insets.getInsets(
                             WindowInsetsCompat.Type.systemBars()
                     );
@@ -96,9 +111,9 @@ public class FindRoomActivity extends AppCompatActivity {
         bindViews();
         setupFilters();
 
-        apiService = RetrofitClient.getApiService(this);
+        apiService = RetrofitClient.getApiService(requireContext());
 
-        classroomAdapter = new ClassroomAdapter(this);
+        classroomAdapter = new ClassroomAdapter(requireContext());
         listClassrooms.setAdapter(classroomAdapter);
 
         /*
@@ -106,7 +121,7 @@ public class FindRoomActivity extends AppCompatActivity {
          * Thông tin phòng sẽ được đưa lên khu vực nhập liệu.
          */
         listClassrooms.setOnItemClickListener(
-                (parent, view, position, id) -> {
+                (parent, v, position, id) -> {
                     Classroom selectedClassroom =
                             classroomAdapter.getItem(position);
 
@@ -114,21 +129,21 @@ public class FindRoomActivity extends AppCompatActivity {
                 }
         );
 
-        findViewById(R.id.btnFindRoomBack)
-                .setOnClickListener(view -> finish());
+        rootView.findViewById(R.id.btnFindRoomBack)
+                .setOnClickListener(v -> requireActivity().onBackPressed());
 
         loadClassrooms();
     }
 
     private void bindViews() {
-        etSearchRoom = findViewById(R.id.etSearchRoom);
-        actCampus = findViewById(R.id.actCampusFilter);
-        actBuilding = findViewById(R.id.actBuildingFilter);
-        actStatus = findViewById(R.id.actStatusFilter);
-        listClassrooms = findViewById(R.id.listClassrooms);
-        tvResultCount = findViewById(R.id.tvRoomResultCount);
-        tvRoomState = findViewById(R.id.tvRoomState);
-        roomProgress = findViewById(R.id.roomProgress);
+        etSearchRoom = rootView.findViewById(R.id.etSearchRoom);
+        actCampus = rootView.findViewById(R.id.actCampusFilter);
+        actBuilding = rootView.findViewById(R.id.actBuildingFilter);
+        actStatus = rootView.findViewById(R.id.actStatusFilter);
+        listClassrooms = rootView.findViewById(R.id.listClassrooms);
+        tvResultCount = rootView.findViewById(R.id.tvRoomResultCount);
+        tvRoomState = rootView.findViewById(R.id.tvRoomState);
+        roomProgress = rootView.findViewById(R.id.roomProgress);
     }
 
     private void setupFilters() {
@@ -183,7 +198,7 @@ public class FindRoomActivity extends AppCompatActivity {
         });
 
         actCampus.setOnItemClickListener(
-                (parent, view, position, id) -> {
+                (parent, v, position, id) -> {
                     selectedCampus = String.valueOf(
                             parent.getItemAtPosition(position)
                     );
@@ -197,7 +212,7 @@ public class FindRoomActivity extends AppCompatActivity {
         );
 
         actBuilding.setOnItemClickListener(
-                (parent, view, position, id) -> {
+                (parent, v, position, id) -> {
                     selectedBuilding = String.valueOf(
                             parent.getItemAtPosition(position)
                     );
@@ -207,7 +222,7 @@ public class FindRoomActivity extends AppCompatActivity {
         );
 
         actStatus.setOnItemClickListener(
-                (parent, view, position, id) -> {
+                (parent, v, position, id) -> {
                     selectedStatus = String.valueOf(
                             parent.getItemAtPosition(position)
                     );
@@ -285,8 +300,8 @@ public class FindRoomActivity extends AppCompatActivity {
 
             uniqueStatuses.add(
                     ClassroomAdapter.statusLabel(
-                            this,
-                            classroom.getOperationalStatus()
+                            requireContext(),
+classroom.getOperationalStatus()
                     )
             );
         }
@@ -344,8 +359,8 @@ public class FindRoomActivity extends AppCompatActivity {
             List<String> values
     ) {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_dropdown_item_1line,
+                requireContext(),
+android.R.layout.simple_dropdown_item_1line,
                 values
         );
 
@@ -395,8 +410,8 @@ public class FindRoomActivity extends AppCompatActivity {
                     filterAll.equals(selectedStatus)
                             || selectedStatus.equals(
                             ClassroomAdapter.statusLabel(
-                                    this,
-                                    classroom.getOperationalStatus()
+                                    requireContext(),
+classroom.getOperationalStatus()
                             )
                     );
 
@@ -440,8 +455,8 @@ public class FindRoomActivity extends AppCompatActivity {
         String building = buildingLabel(classroom);
 
         String status = ClassroomAdapter.statusLabel(
-                this,
-                classroom.getOperationalStatus()
+                requireContext(),
+classroom.getOperationalStatus()
         );
 
         selectedCampus = campus.isEmpty()
@@ -572,8 +587,8 @@ public class FindRoomActivity extends AppCompatActivity {
 
     private void openLogin() {
         Intent intent = new Intent(
-                this,
-                LoginActivity.class
+                requireContext(),
+LoginActivity.class
         );
 
         intent.addFlags(
@@ -582,6 +597,6 @@ public class FindRoomActivity extends AppCompatActivity {
         );
 
         startActivity(intent);
-        finish();
+        requireActivity().onBackPressed();
     }
 }

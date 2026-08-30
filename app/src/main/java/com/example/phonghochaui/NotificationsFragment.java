@@ -9,6 +9,12 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -32,8 +38,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NotificationsActivity
-        extends AppCompatActivity {
+public class NotificationsFragment extends Fragment {
 
     private static final String NOTIFICATION_SELECT =
             "id,title,content,"
@@ -53,12 +58,21 @@ public class NotificationsActivity
     private SupabaseApiService apiService;
     private SessionManager sessionManager;
 
+    private View rootView;
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.activity_notifications, container, false);
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         sessionManager =
-                new SessionManager(this);
+                new SessionManager(requireContext());
 
         if (!sessionManager.hasSession()
                 || !"student".equals(
@@ -68,17 +82,15 @@ public class NotificationsActivity
             return;
         }
 
-        EdgeToEdge.enable(this);
+        // EdgeToEdge.enable(requireActivity());
 
-        setContentView(
-                R.layout.activity_notifications
-        );
+        
 
         ViewCompat.setOnApplyWindowInsetsListener(
-                findViewById(
+                rootView.findViewById(
                         R.id.notificationsRoot
                 ),
-                (view, insets) -> {
+                (v, insets) -> {
                     Insets bars = insets.getInsets(
                             WindowInsetsCompat.Type
                                     .systemBars()
@@ -98,28 +110,28 @@ public class NotificationsActivity
         bindViews();
 
         apiService =
-                RetrofitClient.getApiService(this);
+                RetrofitClient.getApiService(requireContext());
 
         adapter =
-                new NotificationAdapter(this);
+                new NotificationAdapter(requireContext());
 
         listNotifications.setAdapter(adapter);
 
-        findViewById(R.id.btnNotificationsBack)
+        rootView.findViewById(R.id.btnNotificationsBack)
                 .setOnClickListener(
-                        view -> finish()
+                        v -> requireActivity().onBackPressed()
                 );
 
         btnRefresh.setOnClickListener(
-                view -> loadNotifications()
+                v -> loadNotifications()
         );
 
         btnMarkAllRead.setOnClickListener(
-                view -> markAllAsRead()
+                v -> markAllAsRead()
         );
 
         listNotifications.setOnItemClickListener(
-                (parent, view, position, id) -> {
+                (parent, v, position, id) -> {
                     NotificationItem item =
                             adapter.getItem(position);
 
@@ -133,27 +145,27 @@ public class NotificationsActivity
     }
 
     private void bindViews() {
-        listNotifications = findViewById(
+        listNotifications = rootView.findViewById(
                 R.id.listNotifications
         );
 
-        tvCount = findViewById(
+        tvCount = rootView.findViewById(
                 R.id.tvNotificationCount
         );
 
-        tvState = findViewById(
+        tvState = rootView.findViewById(
                 R.id.tvNotificationState
         );
 
-        progress = findViewById(
+        progress = rootView.findViewById(
                 R.id.notificationProgress
         );
 
-        btnRefresh = findViewById(
+        btnRefresh = rootView.findViewById(
                 R.id.btnRefreshNotifications
         );
 
-        btnMarkAllRead = findViewById(
+        btnMarkAllRead = rootView.findViewById(
                 R.id.btnMarkAllNotificationsRead
         );
     }
@@ -274,7 +286,7 @@ public class NotificationsActivity
 
                 if (!response.isSuccessful()) {
                     Toast.makeText(
-                            NotificationsActivity.this,
+                            requireContext(),
 
                             readApiError(
                                     response.errorBody(),
@@ -303,7 +315,7 @@ public class NotificationsActivity
                     Throwable throwable
             ) {
                 Toast.makeText(
-                        NotificationsActivity.this,
+                        requireContext(),
                         networkError(throwable),
                         Toast.LENGTH_LONG
                 ).show();
@@ -346,7 +358,7 @@ public class NotificationsActivity
                     btnMarkAllRead.setEnabled(true);
 
                     Toast.makeText(
-                            NotificationsActivity.this,
+                            requireContext(),
 
                             readApiError(
                                     response.errorBody(),
@@ -374,7 +386,7 @@ public class NotificationsActivity
                 updateSummary();
 
                 Toast.makeText(
-                        NotificationsActivity.this,
+                        requireContext(),
                         R.string.notification_all_read_success,
                         Toast.LENGTH_SHORT
                 ).show();
@@ -388,7 +400,7 @@ public class NotificationsActivity
                 btnMarkAllRead.setEnabled(true);
 
                 Toast.makeText(
-                        NotificationsActivity.this,
+                        requireContext(),
                         networkError(throwable),
                         Toast.LENGTH_LONG
                 ).show();
@@ -544,8 +556,8 @@ public class NotificationsActivity
         sessionManager.clearSession();
 
         Toast.makeText(
-                this,
-                R.string.session_expired_message,
+                requireContext(),
+R.string.session_expired_message,
                 Toast.LENGTH_LONG
         ).show();
 
@@ -554,8 +566,8 @@ public class NotificationsActivity
 
     private void openLogin() {
         Intent intent = new Intent(
-                this,
-                LoginActivity.class
+                requireContext(),
+LoginActivity.class
         );
 
         intent.addFlags(
@@ -564,6 +576,6 @@ public class NotificationsActivity
         );
 
         startActivity(intent);
-        finish();
+        requireActivity().onBackPressed();
     }
 }

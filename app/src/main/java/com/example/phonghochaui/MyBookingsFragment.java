@@ -10,6 +10,12 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -28,8 +34,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MyBookingsActivity
-        extends AppCompatActivity {
+public class MyBookingsFragment extends Fragment {
 
     private static final String BOOKING_SELECT =
             "id,booking_date,start_time,end_time,"
@@ -59,14 +64,21 @@ public class MyBookingsActivity
     private String filterAll;
     private String selectedStatus;
 
+    private View rootView;
+
+    @Nullable
     @Override
-    protected void onCreate(
-            Bundle savedInstanceState
-    ) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.activity_my_bookings, container, false);
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         sessionManager =
-                new SessionManager(this);
+                new SessionManager(requireContext());
 
         if (!sessionManager.hasSession()
                 || !"student".equals(
@@ -76,15 +88,13 @@ public class MyBookingsActivity
             return;
         }
 
-        EdgeToEdge.enable(this);
+        // EdgeToEdge.enable(requireActivity());
 
-        setContentView(
-                R.layout.activity_my_bookings
-        );
+        
 
         ViewCompat.setOnApplyWindowInsetsListener(
-                findViewById(R.id.myBookingsRoot),
-                (view, insets) -> {
+                rootView.findViewById(R.id.myBookingsRoot),
+                (v, insets) -> {
                     Insets bars =
                             insets.getInsets(
                                     WindowInsetsCompat
@@ -107,44 +117,44 @@ public class MyBookingsActivity
         setupStatusFilter();
 
         apiService =
-                RetrofitClient.getApiService(this);
+                RetrofitClient.getApiService(requireContext());
 
         adapter =
-                new RoomBookingAdapter(this);
+                new RoomBookingAdapter(requireContext());
 
         listBookings.setAdapter(adapter);
 
-        findViewById(R.id.btnMyBookingsBack)
+        rootView.findViewById(R.id.btnMyBookingsBack)
                 .setOnClickListener(
-                        view -> finish()
+                        v -> requireActivity().onBackPressed()
                 );
 
-        findViewById(R.id.btnRefreshBookings)
+        rootView.findViewById(R.id.btnRefreshBookings)
                 .setOnClickListener(
-                        view -> loadBookings()
+                        v -> loadBookings()
                 );
 
         loadBookings();
     }
 
     private void bindViews() {
-        actStatus = findViewById(
+        actStatus = rootView.findViewById(
                 R.id.actMyBookingStatus
         );
 
-        listBookings = findViewById(
+        listBookings = rootView.findViewById(
                 R.id.listMyBookings
         );
 
-        tvCount = findViewById(
+        tvCount = rootView.findViewById(
                 R.id.tvMyBookingCount
         );
 
-        tvState = findViewById(
+        tvState = rootView.findViewById(
                 R.id.tvMyBookingState
         );
 
-        progress = findViewById(
+        progress = rootView.findViewById(
                 R.id.myBookingProgress
         );
     }
@@ -174,8 +184,8 @@ public class MyBookingsActivity
 
         actStatus.setAdapter(
                 new ArrayAdapter<>(
-                        this,
-                        android.R.layout
+                        requireContext(),
+android.R.layout
                                 .simple_dropdown_item_1line,
                         options
                 )
@@ -187,7 +197,7 @@ public class MyBookingsActivity
         );
 
         actStatus.setOnItemClickListener(
-                (parent, view, position, id) -> {
+                (parent, v, position, id) -> {
                     selectedStatus =
                             String.valueOf(
                                     parent.getItemAtPosition(
@@ -294,8 +304,8 @@ public class MyBookingsActivity
 
             String label =
                     RoomBookingAdapter.statusLabel(
-                            this,
-                            booking.getStatus()
+                            requireContext(),
+booking.getStatus()
                     );
 
             if (filterAll.equals(selectedStatus)
@@ -366,8 +376,8 @@ public class MyBookingsActivity
     private void openLogin() {
         Intent intent =
                 new Intent(
-                        this,
-                        LoginActivity.class
+                        requireContext(),
+LoginActivity.class
                 );
 
         intent.addFlags(
@@ -376,6 +386,6 @@ public class MyBookingsActivity
         );
 
         startActivity(intent);
-        finish();
+        requireActivity().onBackPressed();
     }
 }

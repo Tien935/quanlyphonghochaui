@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_student_home"
+        android:icon="@drawable/ic_home_24"
+        android:title="Trang chủ" />
+    <item
+        android:id="@+id/nav_student_booking"
+        android:icon="@drawable/ic_add_box_24"
+        android:title="Đăng ký" />
+    <item
+        android:id="@+id/nav_student_schedule"
+        android:icon="@drawable/ic_calendar_today_24"
+        android:title="Lịch" />
+    <item
+        android:id="@+id/nav_student_notifications"
+        android:icon="@drawable/ic_notifications_24"
+        android:title="Thông báo" />
+</menu>

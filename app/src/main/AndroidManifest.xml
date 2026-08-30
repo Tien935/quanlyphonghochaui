@@ -34,19 +34,7 @@
             android:name=".RoomManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".NotificationsActivity"
-            android:exported="false" />
-        <activity
             android:name=".AdminBookingRequestsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MyBookingsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CreateBookingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FindRoomActivity"
             android:exported="false" />
         <activity
             android:name=".StudentHomeActivity"

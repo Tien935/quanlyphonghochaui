@@ -83,7 +83,10 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.gson.converter)
     implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.androidx.navigation.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 }

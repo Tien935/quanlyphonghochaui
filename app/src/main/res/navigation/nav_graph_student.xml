@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_student"
+    app:startDestination="@id/nav_student_home">
+
+    <fragment
+        android:id="@+id/nav_student_home"
+        android:name="com.example.phonghochaui.ui.StudentHomeFragment"
+        android:label="Trang chủ"
+        tools:layout="@layout/fragment_student_home" />
+
+    <fragment
+        android:id="@+id/nav_student_booking"
+        android:name="com.example.phonghochaui.CreateBookingFragment"
+        android:label="Đăng ký sử dụng phòng"
+        tools:layout="@layout/activity_create_booking" />
+
+    <fragment
+        android:id="@+id/nav_student_schedule"
+        android:name="com.example.phonghochaui.MyBookingsFragment"
+        android:label="Lịch của tôi"
+        tools:layout="@layout/activity_my_bookings" />
+
+    <fragment
+        android:id="@+id/nav_student_notifications"
+        android:name="com.example.phonghochaui.NotificationsFragment"
+        android:label="Thông báo"
+        tools:layout="@layout/activity_notifications" />
+
+    <fragment
+        android:id="@+id/nav_student_find_room"
+        android:name="com.example.phonghochaui.FindRoomFragment"
+        android:label="Tìm phòng học"
+        tools:layout="@layout/activity_find_room" />
+</navigation>

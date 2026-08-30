@@ -11,6 +11,12 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -41,7 +47,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CreateBookingActivity extends AppCompatActivity {
+public class CreateBookingFragment extends Fragment {
 
     private static final String CLASSROOM_SELECT =
             "id,room_code,floor,capacity,"
@@ -84,12 +90,21 @@ public class CreateBookingActivity extends AppCompatActivity {
     private int endHour = -1;
     private int endMinute = -1;
 
+    private View rootView;
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.activity_create_booking, container, false);
+        return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         SessionManager sessionManager =
-                new SessionManager(this);
+                new SessionManager(requireContext());
 
         if (!sessionManager.hasSession()
                 || !"student".equals(
@@ -99,15 +114,13 @@ public class CreateBookingActivity extends AppCompatActivity {
             return;
         }
 
-        EdgeToEdge.enable(this);
+        // EdgeToEdge.enable(requireActivity());
 
-        setContentView(
-                R.layout.activity_create_booking
-        );
+        
 
         ViewCompat.setOnApplyWindowInsetsListener(
-                findViewById(R.id.createBookingRoot),
-                (view, insets) -> {
+                rootView.findViewById(R.id.createBookingRoot),
+                (v, insets) -> {
                     Insets bars = insets.getInsets(
                             WindowInsetsCompat
                                     .Type
@@ -128,31 +141,31 @@ public class CreateBookingActivity extends AppCompatActivity {
         bindViews();
 
         apiService =
-                RetrofitClient.getApiService(this);
+                RetrofitClient.getApiService(requireContext());
 
-        findViewById(R.id.btnCreateBookingBack)
+        rootView.findViewById(R.id.btnCreateBookingBack)
                 .setOnClickListener(
-                        view -> finish()
+                        v -> requireActivity().onBackPressed()
                 );
 
         etDate.setOnClickListener(
-                view -> showDatePicker()
+                v -> showDatePicker()
         );
 
         etStart.setOnClickListener(
-                view -> showTimePicker(true)
+                v -> showTimePicker(true)
         );
 
         etEnd.setOnClickListener(
-                view -> showTimePicker(false)
+                v -> showTimePicker(false)
         );
 
         btnSubmit.setOnClickListener(
-                view -> submitBooking()
+                v -> submitBooking()
         );
 
         actRoom.setOnItemClickListener(
-                (parent, view, position, id) -> {
+                (parent, v, position, id) -> {
                     if (position >= 0
                             && position < activeClassrooms.size()) {
 
@@ -176,67 +189,67 @@ public class CreateBookingActivity extends AppCompatActivity {
     }
 
     private void bindViews() {
-        tilRoom = findViewById(
+        tilRoom = rootView.findViewById(
                 R.id.tilBookingRoom
         );
 
-        tilDate = findViewById(
+        tilDate = rootView.findViewById(
                 R.id.tilBookingDate
         );
 
-        tilStart = findViewById(
+        tilStart = rootView.findViewById(
                 R.id.tilBookingStart
         );
 
-        tilEnd = findViewById(
+        tilEnd = rootView.findViewById(
                 R.id.tilBookingEnd
         );
 
-        tilHeadcount = findViewById(
+        tilHeadcount = rootView.findViewById(
                 R.id.tilBookingHeadcount
         );
 
-        tilPurpose = findViewById(
+        tilPurpose = rootView.findViewById(
                 R.id.tilBookingPurpose
         );
 
-        actRoom = findViewById(
+        actRoom = rootView.findViewById(
                 R.id.actBookingRoom
         );
 
-        etDate = findViewById(
+        etDate = rootView.findViewById(
                 R.id.etBookingDate
         );
 
-        etStart = findViewById(
+        etStart = rootView.findViewById(
                 R.id.etBookingStart
         );
 
-        etEnd = findViewById(
+        etEnd = rootView.findViewById(
                 R.id.etBookingEnd
         );
 
-        etHeadcount = findViewById(
+        etHeadcount = rootView.findViewById(
                 R.id.etBookingHeadcount
         );
 
-        etPurpose = findViewById(
+        etPurpose = rootView.findViewById(
                 R.id.etBookingPurpose
         );
 
-        tvRoomHint = findViewById(
+        tvRoomHint = rootView.findViewById(
                 R.id.tvBookingRoomHint
         );
 
-        tvError = findViewById(
+        tvError = rootView.findViewById(
                 R.id.tvBookingError
         );
 
-        btnSubmit = findViewById(
+        btnSubmit = rootView.findViewById(
                 R.id.btnSubmitBooking
         );
 
-        progress = findViewById(
+        progress = rootView.findViewById(
                 R.id.bookingProgress
         );
     }
@@ -303,7 +316,7 @@ public class CreateBookingActivity extends AppCompatActivity {
 
                         actRoom.setAdapter(
                                 new ArrayAdapter<>(
-                                        CreateBookingActivity.this,
+                                        requireContext(),
                                         android.R.layout
                                                 .simple_dropdown_item_1line,
                                         labels
@@ -347,8 +360,8 @@ public class CreateBookingActivity extends AppCompatActivity {
 
         DatePickerDialog dialog =
                 new DatePickerDialog(
-                        this,
-                        (view, year, month, day) -> {
+                        requireContext(),
+(view, year, month, day) -> {
                             selectedDate =
                                     Calendar.getInstance();
 
@@ -442,8 +455,8 @@ public class CreateBookingActivity extends AppCompatActivity {
                 );
 
         new TimePickerDialog(
-                this,
-                (view, selectedHour, selectedMinute) -> {
+                requireContext(),
+(view, selectedHour, selectedMinute) -> {
                     String value =
                             String.format(
                                     Locale.getDefault(),
@@ -738,7 +751,7 @@ public class CreateBookingActivity extends AppCompatActivity {
                         R.string.booking_success_message_without_id
                 );
 
-        new MaterialAlertDialogBuilder(this)
+        new MaterialAlertDialogBuilder(requireContext())
                 .setTitle(
                         R.string.booking_success_title
                 )
@@ -746,7 +759,7 @@ public class CreateBookingActivity extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton(
                         R.string.back_to_home,
-                        (dialog, which) -> finish()
+                        (dialog, which) -> requireActivity().onBackPressed()
                 )
                 .show();
     }
@@ -886,8 +899,8 @@ public class CreateBookingActivity extends AppCompatActivity {
     private void openLogin() {
         Intent intent =
                 new Intent(
-                        this,
-                        LoginActivity.class
+                        requireContext(),
+LoginActivity.class
                 );
 
         intent.addFlags(
@@ -896,6 +909,6 @@ public class CreateBookingActivity extends AppCompatActivity {
         );
 
         startActivity(intent);
-        finish();
+        requireActivity().onBackPressed();
     }
 }
