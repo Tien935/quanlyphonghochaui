@@ -14,6 +14,7 @@ import com.example.phonghochaui.data.model.RoomBooking;
 import com.example.phonghochaui.data.model.RoomBookingRequest;
 import com.example.phonghochaui.data.model.ScheduleItem;
 import com.example.phonghochaui.data.model.SubjectOption;
+import com.example.phonghochaui.data.model.IncidentReport;
 
 import java.util.List;
 
@@ -153,6 +154,29 @@ public interface SupabaseApiService {
             @Query("id") String idFilter,
             @Query("user_id") String userFilter,
             @Query("is_read") String readFilter,
+            @Body JsonObject request
+    );
+
+    @POST("rest/v1/incident_reports")
+    Call<Void> createIncidentReport(
+            @Body IncidentReport report
+    );
+
+    @GET("rest/v1/incident_reports")
+    Call<List<IncidentReport>> getIncidentReports(
+            @Query("select") String columns,
+            @Query("order") String order
+    );
+
+    @PATCH("rest/v1/incident_reports")
+    Call<Void> updateIncidentReport(
+            @Query("id") String idFilter,
+            @Body JsonObject request
+    );
+
+    @PATCH("rest/v1/classrooms")
+    Call<Void> updateClassroomStatus(
+            @Query("id") String idFilter,
             @Body JsonObject request
     );
 }

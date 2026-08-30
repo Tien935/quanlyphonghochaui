@@ -232,6 +232,22 @@
             app:strokeColor="@color/haui_outline" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdminIncidents"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/admin_incidents"
+            android:textAllCaps="false"
+            android:textColor="@color/haui_blue"
+            android:textSize="15sp"
+            app:cornerRadius="14dp"
+            app:strokeColor="@color/haui_outline" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAdminLogout"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="match_parent"

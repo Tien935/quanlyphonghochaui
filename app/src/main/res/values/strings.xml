@@ -49,12 +49,14 @@
     <string name="admin_manage_rooms">Quản lý phòng học</string>
     <string name="admin_approve_requests">Duyệt yêu cầu đặt phòng</string>
     <string name="admin_manage_users">Quản lý tài khoản</string>
+    <string name="admin_incidents">Quản lý sự cố</string>
     <string name="admin_reports">Báo cáo thống kê</string>
 
     <string name="student_find_room">Tìm phòng học</string>
     <string name="student_create_booking">Đăng ký sử dụng phòng</string>
     <string name="student_my_bookings">Lịch đăng ký của tôi</string>
     <string name="student_notifications">Thông báo</string>
+    <string name="student_report_incident">Báo cáo sự cố</string>
 
     <string name="logout">Đăng xuất</string>
     <string name="logout_title">Xác nhận đăng xuất</string>
@@ -62,6 +64,35 @@
     <string name="cancel">Hủy</string>
     <string name="feature_coming_soon">Chức năng “%1$s” sẽ được xây dựng ở bước tiếp theo.</string>
     <string name="back">Quay lại</string>
+
+    <string name="report_incident_title">Báo cáo sự cố</string>
+    <string name="report_incident_description">Xin vui lòng chọn phòng học và mô tả chi tiết sự cố bạn đang gặp phải.</string>
+    <string name="incident_room_label">Phòng học</string>
+    <string name="incident_room_hint">Chỉ hiển thị phòng đang hoạt động</string>
+    <string name="incident_issue_type_label">Loại sự cố</string>
+    <string name="incident_priority_label">Mức độ ưu tiên</string>
+    <string name="incident_desc_label">Mô tả sự cố</string>
+    <string name="incident_desc_hint">Chi tiết về thiết bị, phần mềm hoặc cơ sở vật chất bị hỏng...</string>
+    <string name="incident_submit">Gửi báo cáo</string>
+    <string name="incident_submitting">Đang gửi...</string>
+    <string name="incident_success_title">Đã gửi báo cáo</string>
+    <string name="incident_success_message">Cảm ơn bạn! Báo cáo sự cố của bạn đã được gửi cho Ban Quản Lý.</string>
+    <string name="incident_error_room">Vui lòng chọn phòng học.</string>
+    <string name="incident_error_desc">Vui lòng nhập mô tả sự cố (ít nhất 10 ký tự).</string>
+    <string name="incident_error_submit">Có lỗi xảy ra khi gửi báo cáo.</string>
+    <string name="admin_incident_detail_title">Chi tiết sự cố</string>
+    <string name="admin_incident_empty">Không có báo cáo sự cố nào.</string>
+    <string name="admin_incident_loading">Đang tải danh sách sự cố...</string>
+    <string name="admin_incident_accept">Tiếp nhận &amp; Bảo trì</string>
+    <string name="admin_incident_resolve">Hoàn tất xử lý</string>
+    <string name="admin_incident_status_pending">Chờ xử lý</string>
+    <string name="admin_incident_status_in_progress">Đang bảo trì</string>
+    <string name="admin_incident_status_resolved">Đã xử lý</string>
+    <string name="admin_incident_priority_low">Ưu tiên: Thấp</string>
+    <string name="admin_incident_priority_medium">Ưu tiên: Trung bình</string>
+    <string name="admin_incident_priority_high">Ưu tiên: Cao</string>
+    <string name="admin_incident_update_success">Cập nhật trạng thái thành công.</string>
+    <string name="admin_incident_update_failed">Không thể cập nhật trạng thái.</string>
 
     <string name="find_room_title">Tìm phòng học</string>
     <string name="search_room_hint">Nhập mã phòng, tên tòa nhà hoặc cơ sở</string>

@@ -1,8 +1,9 @@
 package com.example.phonghochaui.data.model;
 
 import com.google.gson.annotations.SerializedName;
+import java.io.Serializable;
 
-public class Classroom {
+public class Classroom implements Serializable {
 
     @SerializedName("id")
     private long id;
@@ -57,7 +58,7 @@ public class Classroom {
         return value == null ? "" : value;
     }
 
-    public static class Building {
+    public static class Building implements Serializable {
 
         @SerializedName("id")
         private long id;
@@ -99,7 +100,7 @@ public class Classroom {
         }
     }
 
-    public static class Campus {
+    public static class Campus implements Serializable {
 
         @SerializedName("id")
         private long id;

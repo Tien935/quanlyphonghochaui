@@ -92,6 +92,10 @@ public class StudentHomeFragment extends Fragment {
             if (bottomNav != null) bottomNav.setSelectedItemId(R.id.nav_student_notifications);
         });
 
+        view.findViewById(R.id.btnStudentReportIncident).setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.nav_student_report_incident);
+        });
+
         view.findViewById(R.id.btnStudentLogout).setOnClickListener(v -> showLogoutConfirmation());
     }
 

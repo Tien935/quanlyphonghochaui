@@ -99,6 +99,12 @@ public class AdminHomeActivity extends AppCompatActivity {
                         AdminReportsActivity.class
                 ))
         );
+        findViewById(R.id.btnAdminIncidents).setOnClickListener(
+                view -> startActivity(new Intent(
+                        this,
+                        AdminIncidentsActivity.class
+                ))
+        );
         findViewById(R.id.btnAdminLogout).setOnClickListener(
                 view -> showLogoutConfirmation()
         );

@@ -34,4 +34,10 @@
         android:name="com.example.phonghochaui.FindRoomFragment"
         android:label="Tìm phòng học"
         tools:layout="@layout/activity_find_room" />
+
+    <fragment
+        android:id="@+id/nav_student_report_incident"
+        android:name="com.example.phonghochaui.ui.ReportIncidentFragment"
+        android:label="Báo cáo sự cố"
+        tools:layout="@layout/fragment_report_incident" />
 </navigation>

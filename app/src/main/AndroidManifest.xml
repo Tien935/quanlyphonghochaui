@@ -21,6 +21,12 @@
             android:name=".AdminScheduleManagementActivity"
             android:exported="false" />
         <activity
+            android:name=".AdminIncidentDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminIncidentsActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminReportsActivity"
             android:exported="false" />
         <activity
