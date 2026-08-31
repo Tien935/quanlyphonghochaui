@@ -33,6 +33,26 @@ public class StudentHomeActivity extends AppCompatActivity {
             NavController navController = navHostFragment.getNavController();
             BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_student);
             NavigationUI.setupWithNavController(bottomNav, navController);
+
+            // Ghi đè hành vi chọn tab mới (ngăn khôi phục lịch sử cũ)
+            bottomNav.setOnItemSelectedListener(item -> {
+                androidx.navigation.NavOptions options = new androidx.navigation.NavOptions.Builder()
+                        .setLaunchSingleTop(true)
+                        .setRestoreState(false) // KHÔNG khôi phục trạng thái cũ
+                        .setPopUpTo(navController.getGraph().getStartDestinationId(), false, false) // Xóa lịch sử hiện tại
+                        .build();
+                try {
+                    navController.navigate(item.getItemId(), null, options);
+                    return true;
+                } catch (IllegalArgumentException e) {
+                    return false;
+                }
+            });
+
+            // Ghi đè hành vi nhấn lại tab hiện tại (để đưa về trang gốc nếu đang ở trang con)
+            bottomNav.setOnItemReselectedListener(item -> {
+                navController.popBackStack(navController.getGraph().getStartDestinationId(), false);
+            });
         }
     }
 }
